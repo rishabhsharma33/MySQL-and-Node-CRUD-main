@@ -1,0 +1,55 @@
+* {
+	font-family: quicksand;
+	font-weight: bold;
+}
+
+.address {
+	display: inline-block;
+	vertical-align: top;
+}
+
+textarea {
+	font-weight: normal;
+}
+
+.address label {
+	display: block;
+}
+
+.table {
+	border-collapse: collapse;
+	width: 95%;
+}
+
+.table tr td {
+	border: 1px solid gray;
+}
+
+#create,
+#update {
+	border-radius: 1rem;
+	margin-top: 2rem;
+	background-color: rgb(177, 155, 182);
+	box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px,
+		rgba(17, 17, 26, 0.1) 0px 8px 24px,
+		rgba(17, 17, 26, 0.1) 0px 16px 48px;
+}
+
+hr {
+	margin-top: 0;
+}
+
+#formheading {
+	font-weight: 600;
+	margin-bottom: 3;
+	padding: 1rem 0 0 0;
+
+}
+
+.mb-3 {
+	padding: 1rem 0 1rem 0;
+}
+
+.btn {
+	margin: 2rem 0 2rem 0.3rem;
+}

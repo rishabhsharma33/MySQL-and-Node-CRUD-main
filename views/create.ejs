@@ -1,0 +1,134 @@
+<%- include('partials/Navbar') %>
+<form id="createform" class="container" method="post" action="/create">
+  <center><h1 id="formheading">Employee Contact Form</h1></center>
+  <hr />
+  <div class="mb-3">
+    <label for="empname" class="form-label">Employee Full Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="empname"
+      name="empname"
+      autofocus
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <label for="jobtitle" class="form-label">Job Title</label>
+    <input
+      type="text"
+      class="form-control"
+      id="jobtitle"
+      name="jobtitle"
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <label for="phonenumber" class="form-label">Phone Number</label>
+    <input
+      type="tel"
+      class="form-control"
+      id="phonenumber"
+      name="phonenumber"
+      title="Enter 10 Digit Number only"
+      pattern="[1-9]{1}[0-9]{9}"
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input type="email" class="form-control" id="email" name="email" required />
+  </div>
+  <div>
+    <div class="address col-md-4 mb-3">
+      <label for="Address" class="form-label">Address</label>
+      <textarea id="address" name="address" cols="40" rows="7"></textarea>
+    </div>
+    <div class="address col-md-3 mb-3">
+      <label for="city" class="form-label">City</label>
+      <input type="text" class="form-control" id="city" name="city" required />
+    </div>
+    <div class="address col-md-3 mb-3">
+      <label for="state" class="form-label">State</label>
+      <input
+        type="text"
+        class="form-control"
+        id="state"
+        name="state"
+        required
+      />
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="primarycontact" class="form-label"
+      >Primary Emergency Contact</label
+    >
+    <input
+      type="text"
+      class="form-control"
+      id="primarycontact"
+      name="primarycontact"
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <label for="primaryphone" class="form-label">Phone Number</label>
+    <input
+      type="tel"
+      class="form-control"
+      id="primaryphone"
+      name="primaryphone"
+      title="Enter 10 Digit Number only"
+      pattern="[1-9]{1}[0-9]{9}"
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <label for="primaryrelation" class="form-label">Relationship</label>
+    <input
+      type="text"
+      class="form-control"
+      id="primaryrelation"
+      name="primaryrelation"
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <label for="secondarycontact" class="form-label"
+      >Secondary Emergency Contact</label
+    >
+    <input
+      type="text"
+      class="form-control"
+      id="secondarycontact"
+      name="secondarycontact"
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <label for="secondaryphone" class="form-label">Phone Number</label>
+    <input
+      type="tel"
+      class="form-control"
+      id="secondaryphone"
+      name="secondaryphone"
+      title="Enter 10 Digit Number only"
+      pattern="[1-9]{1}[0-9]{9}"
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <label for="secondaryrelation" class="form-label">Relationship</label>
+    <input
+      type="text"
+      class="form-control"
+      id="secondaryrelation"
+      name="secondaryrelation"
+      required
+    />
+  </div>
+  <div id="submitButton">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+<%- include('partials/footer') %>

@@ -1,0 +1,94 @@
+<%- include('partials/Navbar') %>
+<div class="table" style="margin: 1rem auto 1rem auto">
+  <table
+    id="list"
+    class="table table-bordered table-dark"
+    style="border: 5px"
+  >
+    <%#creating Table  %>
+  </table>
+</div>
+<script
+  src="https://code.jquery.com/jquery-3.6.4.min.js"
+  integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+  crossorigin="anonymous"
+></script>
+<script>
+  $(document).ready(function () {
+    var DataTable = $("#list").DataTable({
+      initComplete: function (settings, json) {
+        $("#list").show();
+      },
+      columns: [
+        { data: "emp_id", name: "emp_id", title: "ID" },
+        { data: "name", name: "name", title: "Name" },
+        { data: "job", name: "job", title: "Job Title" },
+        { data: "phone", name: "phone", title: "Phone" },
+        { data: "email", name: "email", title: "Email" },
+        { data: "address", name: "address", title: "Address" },
+        { data: "city", name: "city", title: "City" },
+        { data: "state", name: "state", title: "State" },
+        {
+          data: "primary_contact",
+          name: "primary_contact",
+          title: "Primary Contact",
+        },
+        { data: "primary_phone", name: "primary_phone", title: "Phone" },
+        {
+          data: "primary_relation",
+          name: "primary_relation",
+          title: "Relationship",
+        },
+        {
+          data: "secondary_contact",
+          name: "secondary_contact",
+          title: "Secondary Contact",
+        },
+        {
+          data: "secondary_phone",
+          name: "secondary_phone",
+          title: "Secondary Phone",
+        },
+        {
+          data: "secondary_relation",
+          name: "secondary_relation",
+          title: "Relationship",
+        },
+        {
+          data: null,
+          title: "Action",
+          wrap: true,
+          render: function (item) {
+            return (
+              '<form action="/update" method="GET"><button name="updateButton" value=' +
+              item.emp_id +
+              ' onclick="this.form.submit()">Update</button></form>'
+            );
+          },
+        },
+        {
+          data: null,
+          title: "Action",
+          wrap: true,
+          render: function (item) {
+            return (
+              '<form action="/delete" method="POST">' +
+              '<button name="deleteButton" value=' +
+              item.emp_id +
+              " onclick=this.form.submit()" +
+              ">Delete</button>" +
+              "</form>"
+            );
+          },
+        },
+      ],
+      ajax: {
+        type: "get",
+        url: "/getData",
+        dataType: "json",
+        dataSrc: "",
+      },
+    });
+  });
+</script>
+<%- include('partials/footer') %>
